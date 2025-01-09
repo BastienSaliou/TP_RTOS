@@ -1,14 +1,16 @@
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "Byte.h"
 #include "Test_lib.h"
-#include "package.h"
+
 
 int test_generate_random_data() {
     int foo1 = 1;
 
     for (int i = 0; i < 100; i++) {
         int32_t data = generate_random_data();
+        //printf("%d\n", data);
 
         if (data > 0xFFFFFF) {
             foo1 = 0;
@@ -44,7 +46,6 @@ int main(void) {
     tst_t tests[] = {
             DECL_TEST(test_generate_random_data),
             DECL_TEST(test_swap_be),
-            DECL_TEST(test_generate_package),
             LAST_TEST //Sentinelle
     };
 

@@ -3,14 +3,18 @@ project(Free_RTOS C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Free_RTOS
+# Exécutable pour tester Byte
+add_executable(test_byte
         Byte.c
-        Test_lib.h
-        Test_lib.c
-        Byte.h
-        package.h
-        package.c
-        mux_demux.c
-        mux_demux.h
         Test_byte.c
-        Test_byte.h)
+        Test_lib.c
+
+)
+
+# Exécutable pour tester Package
+add_executable(test_package
+        Byte.c
+        package.c
+        Test_package.c
+        Test_lib.c
+)

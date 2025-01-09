@@ -13,7 +13,6 @@ typedef struct tst_s {
     const char *name;
 } tst_t;
 
-int fail(void);
-int pass(void);
+void tst_all(tst_t *tst);
 
 #endif

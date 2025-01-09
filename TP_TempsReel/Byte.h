@@ -3,7 +3,8 @@
 
 #include <stdint.h>
 
-uint32_t generate_random_data();
+unsigned char rand8();
+uint8_t generate_random_data();
 uint32_t swap_be(uint32_t data);
 
 

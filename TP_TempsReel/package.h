@@ -7,7 +7,7 @@
 
 typedef struct {
     uint8_t header;
-    uint32_t data[3];
+    uint8_t data[3];
 } ChannelData;
 
 
@@ -16,11 +16,11 @@ typedef struct {
     uint8_t status;
 } Status;
 
-void print_channel_data(const ChannelData *channe0);
-void print_acquisition_status(const Status *status);
-void generate_package();
-void test_generate_package();
 
+void generate_channel_data_random(uint8_t *data);
+ChannelData generate_channel_data(uint8_t header);
+Status generate_status();
+void generate_package();
 
 
 #endif

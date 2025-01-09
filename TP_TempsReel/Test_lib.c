@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h> // Pour EXIT_SUCCESS
 #include "Test_lib.h"
 
 
