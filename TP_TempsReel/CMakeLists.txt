@@ -11,4 +11,6 @@ add_executable(Free_RTOS main.c
         package.h
         package.c
         mux_demux.c
-        mux_demux.h)
+        mux_demux.h
+        Test_byte.c
+        Test_byte.h)
