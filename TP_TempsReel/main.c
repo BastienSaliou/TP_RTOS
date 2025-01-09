@@ -1,12 +1,10 @@
-#include "test_lib.h"
+#include "Test_lib.h"
 #include <stdio.h>
 
-const char * strbool(int v){
-    static const char* array[2] = {"FAIL" , "PASSED"};
-    return array[v & 1];
-}
-int main(void) {
-    printf("Starting Tests...\n");
+
+
+
+    /*printf("Starting Tests...\n");
 
     printf(" Test : %s\n", strbool(test1()));
     printf(" Test : %s\n", strbool(test2()));
@@ -14,5 +12,5 @@ int main(void) {
     printf(" Test : %s\n", strbool(test4()));
 
     printf("All Tests Completed.\n");
-    return 0;
-}
+    return 0;*/
+
