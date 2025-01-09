@@ -62,6 +62,6 @@ int test_swap_be() {
         foo2 = 0;
     }
 
-    return foo2; // Retourne 1 si le test passe, 0 sinon
+    return foo2;
 }
 
