@@ -3,7 +3,7 @@ project(Free_RTOS C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Free_RTOS main.c
+add_executable(Free_RTOS
         Byte.c
         Test_lib.h
         Test_lib.c
