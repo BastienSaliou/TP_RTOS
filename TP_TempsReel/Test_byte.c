@@ -41,6 +41,8 @@ int test_swap_be() {
     return foo2;
 }
 
+#ifdef TEST_BYTE_MAIN
+
 int main(void) {
 
     tst_t tests[] = {
@@ -48,10 +50,7 @@ int main(void) {
             DECL_TEST(test_swap_be),
             LAST_TEST //Sentinelle
     };
-
-    printf("Starting Tests...\n");
     tst_all(tests);
-    printf("All Tests Completed.\n");
-
     return EXIT_SUCCESS;
 }
+#endif

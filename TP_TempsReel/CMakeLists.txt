@@ -3,24 +3,37 @@ project(Free_RTOS C)
 
 set(CMAKE_C_STANDARD 11)
 
-# Exécutable pour tester Byte
 add_executable(test_byte
-        Byte.c
         Test_byte.c
-        Test_lib.c
-
-)
-
-# Exécutable pour tester Package
-add_executable(test_package
         Byte.c
+        Test_lib.c
+)
+target_compile_definitions(test_byte PRIVATE TEST_BYTE_MAIN)
+
+add_executable(test_mux_demux
+        Test_mux_demux.c
+        mux_demux.c
         package.c
+        Test_lib.c
+        Byte.c
+)
+target_compile_definitions(test_mux_demux PRIVATE TEST_MUX_DEMUX_MAIN)
+
+add_executable(test_package
+        Test_package.c
+        package.c
+        Byte.c
+        Test_lib.c
+)
+target_compile_definitions(test_package PRIVATE TEST_PACKAGE_MAIN)
+
+add_executable(test_global
+        Test_global.c
+        Byte.c
+        mux_demux.c
+        package.c
+        Test_byte.c
+        Test_mux_demux.c
         Test_package.c
         Test_lib.c
 )
-add_executable(test_mux_demux
-        Byte.c
-        package.c
-        mux_demux.c
-        Test_lib.c
-        Test_mux_demux.c)

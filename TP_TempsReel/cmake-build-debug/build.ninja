@@ -49,19 +49,22 @@ cmake_ninja_workdir = C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_
 
 build cmake_object_order_depends_target_test_byte: phony || CMakeFiles/test_byte.dir
 
-build CMakeFiles/test_byte.dir/Byte.c.obj: C_COMPILER__test_byte_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Byte.c || cmake_object_order_depends_target_test_byte
-  DEP_FILE = CMakeFiles\test_byte.dir\Byte.c.obj.d
-  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\test_byte.dir
-  OBJECT_FILE_DIR = CMakeFiles\test_byte.dir
-
 build CMakeFiles/test_byte.dir/Test_byte.c.obj: C_COMPILER__test_byte_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_byte.c || cmake_object_order_depends_target_test_byte
+  DEFINES = -DTEST_BYTE_MAIN
   DEP_FILE = CMakeFiles\test_byte.dir\Test_byte.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\test_byte.dir
   OBJECT_FILE_DIR = CMakeFiles\test_byte.dir
 
+build CMakeFiles/test_byte.dir/Byte.c.obj: C_COMPILER__test_byte_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Byte.c || cmake_object_order_depends_target_test_byte
+  DEFINES = -DTEST_BYTE_MAIN
+  DEP_FILE = CMakeFiles\test_byte.dir\Byte.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_byte.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_byte.dir
+
 build CMakeFiles/test_byte.dir/Test_lib.c.obj: C_COMPILER__test_byte_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_lib.c || cmake_object_order_depends_target_test_byte
+  DEFINES = -DTEST_BYTE_MAIN
   DEP_FILE = CMakeFiles\test_byte.dir\Test_lib.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\test_byte.dir
@@ -75,7 +78,7 @@ build CMakeFiles/test_byte.dir/Test_lib.c.obj: C_COMPILER__test_byte_unscanned_D
 #############################################
 # Link the executable test_byte.exe
 
-build test_byte.exe: C_EXECUTABLE_LINKER__test_byte_Debug CMakeFiles/test_byte.dir/Byte.c.obj CMakeFiles/test_byte.dir/Test_byte.c.obj CMakeFiles/test_byte.dir/Test_lib.c.obj
+build test_byte.exe: C_EXECUTABLE_LINKER__test_byte_Debug CMakeFiles/test_byte.dir/Test_byte.c.obj CMakeFiles/test_byte.dir/Byte.c.obj CMakeFiles/test_byte.dir/Test_lib.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\test_byte.dir
@@ -86,6 +89,68 @@ build test_byte.exe: C_EXECUTABLE_LINKER__test_byte_Debug CMakeFiles/test_byte.d
   TARGET_PDB = test_byte.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target test_mux_demux
+
+
+#############################################
+# Order-only phony target for test_mux_demux
+
+build cmake_object_order_depends_target_test_mux_demux: phony || CMakeFiles/test_mux_demux.dir
+
+build CMakeFiles/test_mux_demux.dir/Test_mux_demux.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_mux_demux.c || cmake_object_order_depends_target_test_mux_demux
+  DEFINES = -DTEST_MUX_DEMUX_MAIN
+  DEP_FILE = CMakeFiles\test_mux_demux.dir\Test_mux_demux.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+
+build CMakeFiles/test_mux_demux.dir/mux_demux.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/mux_demux.c || cmake_object_order_depends_target_test_mux_demux
+  DEFINES = -DTEST_MUX_DEMUX_MAIN
+  DEP_FILE = CMakeFiles\test_mux_demux.dir\mux_demux.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+
+build CMakeFiles/test_mux_demux.dir/package.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/package.c || cmake_object_order_depends_target_test_mux_demux
+  DEFINES = -DTEST_MUX_DEMUX_MAIN
+  DEP_FILE = CMakeFiles\test_mux_demux.dir\package.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+
+build CMakeFiles/test_mux_demux.dir/Test_lib.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_lib.c || cmake_object_order_depends_target_test_mux_demux
+  DEFINES = -DTEST_MUX_DEMUX_MAIN
+  DEP_FILE = CMakeFiles\test_mux_demux.dir\Test_lib.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+
+build CMakeFiles/test_mux_demux.dir/Byte.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Byte.c || cmake_object_order_depends_target_test_mux_demux
+  DEFINES = -DTEST_MUX_DEMUX_MAIN
+  DEP_FILE = CMakeFiles\test_mux_demux.dir\Byte.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_mux_demux
+
+
+#############################################
+# Link the executable test_mux_demux.exe
+
+build test_mux_demux.exe: C_EXECUTABLE_LINKER__test_mux_demux_Debug CMakeFiles/test_mux_demux.dir/Test_mux_demux.c.obj CMakeFiles/test_mux_demux.dir/mux_demux.c.obj CMakeFiles/test_mux_demux.dir/package.c.obj CMakeFiles/test_mux_demux.dir/Test_lib.c.obj CMakeFiles/test_mux_demux.dir/Byte.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = test_mux_demux.exe
+  TARGET_IMPLIB = libtest_mux_demux.dll.a
+  TARGET_PDB = test_mux_demux.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target test_package
 
 
@@ -94,25 +159,29 @@ build test_byte.exe: C_EXECUTABLE_LINKER__test_byte_Debug CMakeFiles/test_byte.d
 
 build cmake_object_order_depends_target_test_package: phony || CMakeFiles/test_package.dir
 
-build CMakeFiles/test_package.dir/Byte.c.obj: C_COMPILER__test_package_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Byte.c || cmake_object_order_depends_target_test_package
-  DEP_FILE = CMakeFiles\test_package.dir\Byte.c.obj.d
-  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\test_package.dir
-  OBJECT_FILE_DIR = CMakeFiles\test_package.dir
-
-build CMakeFiles/test_package.dir/package.c.obj: C_COMPILER__test_package_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/package.c || cmake_object_order_depends_target_test_package
-  DEP_FILE = CMakeFiles\test_package.dir\package.c.obj.d
-  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\test_package.dir
-  OBJECT_FILE_DIR = CMakeFiles\test_package.dir
-
 build CMakeFiles/test_package.dir/Test_package.c.obj: C_COMPILER__test_package_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_package.c || cmake_object_order_depends_target_test_package
+  DEFINES = -DTEST_PACKAGE_MAIN
   DEP_FILE = CMakeFiles\test_package.dir\Test_package.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\test_package.dir
   OBJECT_FILE_DIR = CMakeFiles\test_package.dir
 
+build CMakeFiles/test_package.dir/package.c.obj: C_COMPILER__test_package_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/package.c || cmake_object_order_depends_target_test_package
+  DEFINES = -DTEST_PACKAGE_MAIN
+  DEP_FILE = CMakeFiles\test_package.dir\package.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_package.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_package.dir
+
+build CMakeFiles/test_package.dir/Byte.c.obj: C_COMPILER__test_package_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Byte.c || cmake_object_order_depends_target_test_package
+  DEFINES = -DTEST_PACKAGE_MAIN
+  DEP_FILE = CMakeFiles\test_package.dir\Byte.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_package.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_package.dir
+
 build CMakeFiles/test_package.dir/Test_lib.c.obj: C_COMPILER__test_package_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_lib.c || cmake_object_order_depends_target_test_package
+  DEFINES = -DTEST_PACKAGE_MAIN
   DEP_FILE = CMakeFiles\test_package.dir\Test_lib.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\test_package.dir
@@ -126,7 +195,7 @@ build CMakeFiles/test_package.dir/Test_lib.c.obj: C_COMPILER__test_package_unsca
 #############################################
 # Link the executable test_package.exe
 
-build test_package.exe: C_EXECUTABLE_LINKER__test_package_Debug CMakeFiles/test_package.dir/Byte.c.obj CMakeFiles/test_package.dir/package.c.obj CMakeFiles/test_package.dir/Test_package.c.obj CMakeFiles/test_package.dir/Test_lib.c.obj
+build test_package.exe: C_EXECUTABLE_LINKER__test_package_Debug CMakeFiles/test_package.dir/Test_package.c.obj CMakeFiles/test_package.dir/package.c.obj CMakeFiles/test_package.dir/Byte.c.obj CMakeFiles/test_package.dir/Test_lib.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\test_package.dir
@@ -137,61 +206,79 @@ build test_package.exe: C_EXECUTABLE_LINKER__test_package_Debug CMakeFiles/test_
   TARGET_PDB = test_package.exe.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target test_mux_demux
+# Object build statements for EXECUTABLE target test_global
 
 
 #############################################
-# Order-only phony target for test_mux_demux
+# Order-only phony target for test_global
 
-build cmake_object_order_depends_target_test_mux_demux: phony || CMakeFiles/test_mux_demux.dir
+build cmake_object_order_depends_target_test_global: phony || CMakeFiles/test_global.dir
 
-build CMakeFiles/test_mux_demux.dir/Byte.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Byte.c || cmake_object_order_depends_target_test_mux_demux
-  DEP_FILE = CMakeFiles\test_mux_demux.dir\Byte.c.obj.d
+build CMakeFiles/test_global.dir/Test_global.c.obj: C_COMPILER__test_global_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_global.c || cmake_object_order_depends_target_test_global
+  DEP_FILE = CMakeFiles\test_global.dir\Test_global.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
-  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_DIR = CMakeFiles\test_global.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_global.dir
 
-build CMakeFiles/test_mux_demux.dir/package.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/package.c || cmake_object_order_depends_target_test_mux_demux
-  DEP_FILE = CMakeFiles\test_mux_demux.dir\package.c.obj.d
+build CMakeFiles/test_global.dir/Byte.c.obj: C_COMPILER__test_global_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Byte.c || cmake_object_order_depends_target_test_global
+  DEP_FILE = CMakeFiles\test_global.dir\Byte.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
-  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_DIR = CMakeFiles\test_global.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_global.dir
 
-build CMakeFiles/test_mux_demux.dir/mux_demux.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/mux_demux.c || cmake_object_order_depends_target_test_mux_demux
-  DEP_FILE = CMakeFiles\test_mux_demux.dir\mux_demux.c.obj.d
+build CMakeFiles/test_global.dir/mux_demux.c.obj: C_COMPILER__test_global_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/mux_demux.c || cmake_object_order_depends_target_test_global
+  DEP_FILE = CMakeFiles\test_global.dir\mux_demux.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
-  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_DIR = CMakeFiles\test_global.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_global.dir
 
-build CMakeFiles/test_mux_demux.dir/Test_lib.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_lib.c || cmake_object_order_depends_target_test_mux_demux
-  DEP_FILE = CMakeFiles\test_mux_demux.dir\Test_lib.c.obj.d
+build CMakeFiles/test_global.dir/package.c.obj: C_COMPILER__test_global_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/package.c || cmake_object_order_depends_target_test_global
+  DEP_FILE = CMakeFiles\test_global.dir\package.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
-  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_DIR = CMakeFiles\test_global.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_global.dir
 
-build CMakeFiles/test_mux_demux.dir/Test_mux_demux.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_mux_demux.c || cmake_object_order_depends_target_test_mux_demux
-  DEP_FILE = CMakeFiles\test_mux_demux.dir\Test_mux_demux.c.obj.d
+build CMakeFiles/test_global.dir/Test_byte.c.obj: C_COMPILER__test_global_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_byte.c || cmake_object_order_depends_target_test_global
+  DEP_FILE = CMakeFiles\test_global.dir\Test_byte.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
-  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_DIR = CMakeFiles\test_global.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_global.dir
+
+build CMakeFiles/test_global.dir/Test_mux_demux.c.obj: C_COMPILER__test_global_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_mux_demux.c || cmake_object_order_depends_target_test_global
+  DEP_FILE = CMakeFiles\test_global.dir\Test_mux_demux.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_global.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_global.dir
+
+build CMakeFiles/test_global.dir/Test_package.c.obj: C_COMPILER__test_global_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_package.c || cmake_object_order_depends_target_test_global
+  DEP_FILE = CMakeFiles\test_global.dir\Test_package.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_global.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_global.dir
+
+build CMakeFiles/test_global.dir/Test_lib.c.obj: C_COMPILER__test_global_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_lib.c || cmake_object_order_depends_target_test_global
+  DEP_FILE = CMakeFiles\test_global.dir\Test_lib.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_global.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_global.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target test_mux_demux
+# Link build statements for EXECUTABLE target test_global
 
 
 #############################################
-# Link the executable test_mux_demux.exe
+# Link the executable test_global.exe
 
-build test_mux_demux.exe: C_EXECUTABLE_LINKER__test_mux_demux_Debug CMakeFiles/test_mux_demux.dir/Byte.c.obj CMakeFiles/test_mux_demux.dir/package.c.obj CMakeFiles/test_mux_demux.dir/mux_demux.c.obj CMakeFiles/test_mux_demux.dir/Test_lib.c.obj CMakeFiles/test_mux_demux.dir/Test_mux_demux.c.obj
+build test_global.exe: C_EXECUTABLE_LINKER__test_global_Debug CMakeFiles/test_global.dir/Test_global.c.obj CMakeFiles/test_global.dir/Byte.c.obj CMakeFiles/test_global.dir/mux_demux.c.obj CMakeFiles/test_global.dir/package.c.obj CMakeFiles/test_global.dir/Test_byte.c.obj CMakeFiles/test_global.dir/Test_mux_demux.c.obj CMakeFiles/test_global.dir/Test_package.c.obj CMakeFiles/test_global.dir/Test_lib.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_DIR = CMakeFiles\test_global.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = test_mux_demux.exe
-  TARGET_IMPLIB = libtest_mux_demux.dll.a
-  TARGET_PDB = test_mux_demux.exe.dbg
+  TARGET_FILE = test_global.exe
+  TARGET_IMPLIB = libtest_global.dll.a
+  TARGET_PDB = test_global.exe.dbg
 
 
 #############################################
@@ -221,6 +308,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build test_byte: phony test_byte.exe
 
+build test_global: phony test_global.exe
+
 build test_mux_demux: phony test_mux_demux.exe
 
 build test_package: phony test_package.exe
@@ -233,7 +322,7 @@ build test_package: phony test_package.exe
 #############################################
 # Folder: C:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/cmake-build-debug
 
-build all: phony test_byte.exe test_package.exe test_mux_demux.exe
+build all: phony test_byte.exe test_mux_demux.exe test_package.exe test_global.exe
 
 # =============================================================================
 # Built-in targets

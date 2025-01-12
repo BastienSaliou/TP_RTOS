@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "test_byte.exe"
+			"path" : "test_package.exe"
 		},
 		{
-			"path" : "test_byte.pdb"
+			"path" : "test_package.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -13,7 +13,8 @@
 	{
 		"commands" : 
 		[
-			"add_executable"
+			"add_executable",
+			"target_compile_definitions"
 		],
 		"files" : 
 		[
@@ -27,7 +28,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 7,
+				"line" : 22,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 28,
 				"parent" : 0
 			}
 		]
@@ -39,6 +46,13 @@
 			[
 				{
 					"fragment" : "-g -std=gnu11 -fdiagnostics-color=always"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "TEST_PACKAGE_MAIN"
 				}
 			],
 			"language" : "C",
@@ -54,11 +68,12 @@
 			[
 				0,
 				1,
-				2
+				2,
+				3
 			]
 		}
 	],
-	"id" : "test_byte::@6890427a1f51a3e7e1df",
+	"id" : "test_package::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -78,8 +93,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "test_byte",
-	"nameOnDisk" : "test_byte.exe",
+	"name" : "test_package",
+	"nameOnDisk" : "test_package.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -93,7 +108,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				3
 			]
 		}
 	],
@@ -102,13 +118,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Byte.c",
+			"path" : "Test_package.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Test_byte.c",
+			"path" : "package.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Byte.c",
 			"sourceGroupIndex" : 0
 		},
 		{

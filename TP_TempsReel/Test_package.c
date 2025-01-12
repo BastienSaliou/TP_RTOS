@@ -21,11 +21,11 @@ int test_generate_package() {
 
     Status status = generate_status();
 
-    printf("Generated Package:\n");
+    /*printf("Generated Package:\n");
     print_channel_data(&x);
     print_channel_data(&y);
     print_channel_data(&z);
-    print_status(&status);
+    print_status(&status);*/
 
     int headers_correct = 1;
     if (x.header != 0x01) {
@@ -56,17 +56,14 @@ int test_generate_package() {
     }
 }
 
-
+#ifdef TEST_PACKAGE_MAIN
 int main(void) {
 
     tst_t tests[] = {
             DECL_TEST(test_generate_package),
             LAST_TEST //Sentinelle
     };
-
-    printf("Starting Tests...\n");
     tst_all(tests);
-    printf("All Tests Completed.\n");
-
     return EXIT_SUCCESS;
 }
+#endif
