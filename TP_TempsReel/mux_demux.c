@@ -1,11 +1,7 @@
-#include <stdint.h>
-#include <stdio.h>
 #include <string.h>
 #include "package.h"
 
- // Taille fixe de la trame : 4 voies x (1 octet header + 3 octets data)
 
-// Fonction de multiplexage
 void multiplex(uint8_t *trame, ChannelData x, ChannelData y, ChannelData z, Status status) {
     int i = 0;
 
@@ -29,7 +25,6 @@ void multiplex(uint8_t *trame, ChannelData x, ChannelData y, ChannelData z, Stat
     trame[i++] = status.status;
 }
 
-// Fonction de démultiplexage
 void demultiplex(uint8_t *trame, ChannelData *x, ChannelData *y, ChannelData *z, Status *status) {
     int i = 0;
 

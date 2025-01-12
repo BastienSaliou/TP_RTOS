@@ -20,7 +20,5 @@ typedef struct {
 void generate_channel_data_random(uint8_t *data);
 ChannelData generate_channel_data(uint8_t header);
 Status generate_status();
-void generate_package();
-
 
 #endif

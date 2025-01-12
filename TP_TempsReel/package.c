@@ -33,11 +33,3 @@ Status generate_status() {
     status.status = 0x00;
     return status;
 }
-
-void generate_package() {
-    ChannelData x = generate_channel_data(0x01); // Voie X
-    ChannelData y = generate_channel_data(0x02); // Voie Y
-    ChannelData z = generate_channel_data(0x03); // Voie Z
-
-    Status status = generate_status();
-}
