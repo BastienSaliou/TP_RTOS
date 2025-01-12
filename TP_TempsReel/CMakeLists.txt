@@ -18,3 +18,9 @@ add_executable(test_package
         Test_package.c
         Test_lib.c
 )
+add_executable(test_mux_demux
+        Byte.c
+        package.c
+        mux_demux.c
+        Test_lib.c
+        Test_mux_demux.c)

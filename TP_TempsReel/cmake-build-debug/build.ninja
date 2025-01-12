@@ -136,6 +136,63 @@ build test_package.exe: C_EXECUTABLE_LINKER__test_package_Debug CMakeFiles/test_
   TARGET_IMPLIB = libtest_package.dll.a
   TARGET_PDB = test_package.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target test_mux_demux
+
+
+#############################################
+# Order-only phony target for test_mux_demux
+
+build cmake_object_order_depends_target_test_mux_demux: phony || CMakeFiles/test_mux_demux.dir
+
+build CMakeFiles/test_mux_demux.dir/Byte.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Byte.c || cmake_object_order_depends_target_test_mux_demux
+  DEP_FILE = CMakeFiles\test_mux_demux.dir\Byte.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+
+build CMakeFiles/test_mux_demux.dir/package.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/package.c || cmake_object_order_depends_target_test_mux_demux
+  DEP_FILE = CMakeFiles\test_mux_demux.dir\package.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+
+build CMakeFiles/test_mux_demux.dir/mux_demux.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/mux_demux.c || cmake_object_order_depends_target_test_mux_demux
+  DEP_FILE = CMakeFiles\test_mux_demux.dir\mux_demux.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+
+build CMakeFiles/test_mux_demux.dir/Test_lib.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_lib.c || cmake_object_order_depends_target_test_mux_demux
+  DEP_FILE = CMakeFiles\test_mux_demux.dir\Test_lib.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+
+build CMakeFiles/test_mux_demux.dir/Test_mux_demux.c.obj: C_COMPILER__test_mux_demux_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_mux_demux.c || cmake_object_order_depends_target_test_mux_demux
+  DEP_FILE = CMakeFiles\test_mux_demux.dir\Test_mux_demux.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_mux_demux.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_mux_demux
+
+
+#############################################
+# Link the executable test_mux_demux.exe
+
+build test_mux_demux.exe: C_EXECUTABLE_LINKER__test_mux_demux_Debug CMakeFiles/test_mux_demux.dir/Byte.c.obj CMakeFiles/test_mux_demux.dir/package.c.obj CMakeFiles/test_mux_demux.dir/mux_demux.c.obj CMakeFiles/test_mux_demux.dir/Test_lib.c.obj CMakeFiles/test_mux_demux.dir/Test_mux_demux.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\test_mux_demux.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = test_mux_demux.exe
+  TARGET_IMPLIB = libtest_mux_demux.dll.a
+  TARGET_PDB = test_mux_demux.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -164,6 +221,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build test_byte: phony test_byte.exe
 
+build test_mux_demux: phony test_mux_demux.exe
+
 build test_package: phony test_package.exe
 
 # =============================================================================
@@ -174,7 +233,7 @@ build test_package: phony test_package.exe
 #############################################
 # Folder: C:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/cmake-build-debug
 
-build all: phony test_byte.exe test_package.exe
+build all: phony test_byte.exe test_package.exe test_mux_demux.exe
 
 # =============================================================================
 # Built-in targets

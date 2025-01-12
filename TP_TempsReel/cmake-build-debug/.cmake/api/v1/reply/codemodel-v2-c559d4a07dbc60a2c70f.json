@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -43,6 +45,13 @@
 					"id" : "test_byte::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-test_byte-Debug-83353901d9172de42691.json",
 					"name" : "test_byte",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_mux_demux::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_mux_demux-Debug-a9a74d716ae6d3fae923.json",
+					"name" : "test_mux_demux",
 					"projectIndex" : 0
 				},
 				{
