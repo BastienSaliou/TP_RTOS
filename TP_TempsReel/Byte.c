@@ -1,11 +1,11 @@
 #include <stdlib.h>
 #include <stdint.h>
-#include <time.h>
+
 
 unsigned char rand8(){
     static int initialized = 0;
     if (!initialized){
-        srand(time(NULL));
+
         initialized =! initialized;
     }
     return rand()&0xFF;

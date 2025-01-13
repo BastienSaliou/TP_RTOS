@@ -7,53 +7,54 @@
 #include "Test_mux_demux.h"
 #include "Test_lib.h"
 
+#define NUM_CALLS 5
+#define TRAME_SIZE 14
+
+int test_shuffle() {
+    int order[4] = {0, 1, 2, 3};
+    int foo6 = 1;
+
+    for (int n = 0; n < 5; n++) {
+        int original[4];
+        memcpy(original, order, sizeof(order));
+
+        shuffle(order, 5);
+
+        if (memcmp(original, order, sizeof(order)) == 0) {
+            foo6 = 0;
+        }
+
+        return foo6;
+    }
+}
 
 
 int test_multiplex() {
-
-    ChannelData x = generate_channel_data(0x01); // Voie X
-    ChannelData y = generate_channel_data(0x02); // Voie Y
-    ChannelData z = generate_channel_data(0x03); // Voie Z
+    ChannelData x = generate_channel_data(0x01);
+    ChannelData y = generate_channel_data(0x02);
+    ChannelData z = generate_channel_data(0x03);
     Status status = generate_status();
 
-    uint8_t trame[TRAME_SIZE];
+    uint8_t trames[NUM_CALLS][TRAME_SIZE];
+    int foo4 = 0;
 
-    multiplex(trame, x, y, z, status);
+    // teste 5 trames
+    for (int i = 0; i < NUM_CALLS; i++) {
 
-    for (int i = 0; i < TRAME_SIZE; i++) {
-        printf("%02X ", trame[i]);
+        multiplex(trames[i], x, y, z, status);
+        printf("Trame %d : ", i + 1);
+        for (int j = 0; j < TRAME_SIZE; j++) {
+            printf("%02X ", trames[i][j]);
+        }
+        printf("\n");
     }
-    printf("\n");
 
-    int foo4 = 1;
-    int j = 0;
-
-    //voie X
-    if (trame[j++] != x.header)
-        foo4 = 0;
-    if (memcmp(&trame[j], x.data, sizeof(x.data)) != 0)
-        foo4 = 0;
-    j += sizeof(x.data);
-
-    //voie Y
-    if (trame[j++] != y.header)
-        foo4 = 0;
-    if (memcmp(&trame[j], y.data, sizeof(y.data)) != 0)
-        foo4 = 0;
-    j += sizeof(y.data);
-
-    //voie Z
-    if (trame[j++] != z.header)
-        foo4 = 0;
-    if (memcmp(&trame[j], z.data, sizeof(z.data)) != 0)
-        foo4 = 0;
-    j += sizeof(z.data);
-
-    if (trame[j++] != status.header)
-        foo4 = 0;
-    if (trame[j++] != status.status)
-        foo4 = 0;
-
+    for (int i = 0; i < NUM_CALLS - 1; i++) {
+        if (memcmp(trames[i], trames[i + 1], TRAME_SIZE) != 0) {
+            foo4 = 1;
+            break;
+        }
+    }
     return foo4;
 }
 int test_demultiplex() {
@@ -65,55 +66,56 @@ int test_demultiplex() {
     uint8_t trame[TRAME_SIZE];
 
     multiplex(trame, x_original, y_original, z_original, status_original);
-    //trame[4]=0x99;
-    /*for (int i = 0; i < TRAME_SIZE; i++) {
+
+    for (int i = 0; i < TRAME_SIZE; i++) {
         printf("%02X ", trame[i]);
     }
-    printf("\n");*/
-
-    ChannelData x_demux, y_demux, z_demux;
-    Status status_demux;
+    printf("\n");
+    ChannelData x_demux = {0}, y_demux = {0}, z_demux = {0};
+    Status status_demux = {0};
 
     demultiplex(trame, &x_demux, &y_demux, &z_demux, &status_demux);
 
-    /*printf("Voie X : %02X %02X %02X %02X\n",
-           x_demux.header, x_demux.data[0], x_demux.data[1], x_demux.data[2]);
-    printf("Voie Y : %02X %02X %02X %02X\n",
-           y_demux.header, y_demux.data[0], y_demux.data[1], y_demux.data[2]);
-    printf("Voie Z : %02X %02X %02X %02X\n",
-           z_demux.header, z_demux.data[0], z_demux.data[1], z_demux.data[2]);
-    printf("Status : %02X %02X\n",
-           status_demux.header, status_demux.status);*/
-
     int foo5 = 1;
 
-    //voie X
-    if (x_demux.header != x_original.header ||
-        memcmp(x_demux.data, x_original.data, sizeof(x_original.data)) != 0) {
-        foo5 = 0;
+    // Vérifier les voies dans n'importe quel ordre
+    for (int i = 0; i < TRAME_SIZE;) {
+        uint8_t header = trame[i++];
+        switch (header) {
+            case 0x01: // Voie X
+                if (memcmp(&trame[i], x_original.data, sizeof(x_original.data)) != 0) {
+                    foo5 = 0;
+                    printf("Erreur : Données de la voie X incorrectes.\n");
+                }
+                i += sizeof(x_original.data);
+                break;
 
-    }
+            case 0x02: // Voie Y
+                if (memcmp(&trame[i], y_original.data, sizeof(y_original.data)) != 0) {
+                    foo5 = 0;
+                    printf("Erreur : Données de la voie Y incorrectes.\n");
+                }
+                i += sizeof(y_original.data);
+                break;
 
-    //voie Y
-    if (y_demux.header != y_original.header ||
-        memcmp(y_demux.data, y_original.data, sizeof(y_original.data)) != 0) {
-        foo5 = 0;
-    }
+            case 0x03: // Voie Z
+                if (memcmp(&trame[i], z_original.data, sizeof(z_original.data)) != 0) {
+                    foo5 = 0;
+                    printf("Erreur : Données de la voie Z incorrectes.\n");
+                }
+                i += sizeof(z_original.data);
+                break;
 
-    //voie Z
-    if (z_demux.header != z_original.header ||
-        memcmp(z_demux.data, z_original.data, sizeof(z_original.data)) != 0) {
-        foo5 = 0;
-    }
+            case 0x04: // Status
+                if (trame[i++] != status_original.status) {
+                    foo5 = 0;
+                    printf("Erreur : Données du statut incorrectes.\n");
+                }
+                break;
 
-    //Status
-    if (status_demux.header != status_original.header ||
-        status_demux.status != status_original.status) {
-        foo5 = 0;
-
+        }
     }
     return foo5;
-
 }
 #ifdef TEST_MUX_DEMUX_MAIN
 int main(void) {
@@ -121,6 +123,7 @@ int main(void) {
     tst_t tests[] = {
             DECL_TEST(test_multiplex),
             DECL_TEST(test_demultiplex),
+            DECL_TEST(test_shuffle),
             LAST_TEST //Sentinelle
     };
 

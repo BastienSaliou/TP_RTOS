@@ -7,6 +7,7 @@
 
 int test_multiplex();
 int test_demultiplex();
+int test_shuffle();
 
 
 #endif
