@@ -20,10 +20,10 @@ int test_multiplex() {
 
     multiplex(trame, x, y, z, status);
 
-    /*for (int i = 0; i < TRAME_SIZE; i++) {
+    for (int i = 0; i < TRAME_SIZE; i++) {
         printf("%02X ", trame[i]);
     }
-    printf("\n");*/
+    printf("\n");
 
     int foo4 = 1;
     int j = 0;
@@ -65,7 +65,7 @@ int test_demultiplex() {
     uint8_t trame[TRAME_SIZE];
 
     multiplex(trame, x_original, y_original, z_original, status_original);
-
+    //trame[4]=0x99;
     /*for (int i = 0; i < TRAME_SIZE; i++) {
         printf("%02X ", trame[i]);
     }
