@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdio.h>
+
 
 
 unsigned char rand8(){
@@ -16,17 +18,10 @@ int8_t generate_random_data() {
 }
 
 
+int swap_be_8(uint8_t *data) {
 
-uint32_t swap_be(uint32_t data) {
-    uint8_t *bytes = (uint8_t *)&data;
-
-    uint8_t temp = bytes[0];
-    bytes[0] = bytes[3];
-    bytes[3] = temp;
-
-    temp = bytes[1];
-    bytes[1] = bytes[2];
-    bytes[2] = temp;
-
-    return data;
+    uint8_t temp = data[0];
+    data[0] = data[2];
+    data[2] = temp;
+    return *data;
 }

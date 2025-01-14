@@ -34,3 +34,15 @@ Status generate_status() {
     status.status = 0x00;
     return status;
 }
+
+void swap_channel_data(ChannelData *x, ChannelData *y, ChannelData *z) {
+    if (x) {
+        swap_be_8(x->data);
+    }
+    if (y) {
+        swap_be_8(y->data);
+    }
+    if (z) {
+        swap_be_8(z->data);
+    }
+}

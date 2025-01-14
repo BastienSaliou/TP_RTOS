@@ -6,7 +6,7 @@
 #include "Test_package.h"
 
 int main(void) {
-    srand(time(NULL));
+
     tst_t tests[] = {
             DECL_TEST(test_generate_random_data),
             DECL_TEST(test_swap_be),

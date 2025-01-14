@@ -7,6 +7,8 @@
 int test_multiplex();
 int test_demultiplex();
 int test_shuffle();
+void swap_second_and_fourth(uint8_t *data);
+void apply_swap_to_demultiplexed_data(ChannelData *x, ChannelData *y, ChannelData *z);
 
 
 #endif

@@ -5,7 +5,7 @@
 
 unsigned char rand8();
 uint8_t generate_random_data();
-uint32_t swap_be(uint32_t data);
+void swap_be_8(uint8_t *data);
 
 
 #endif

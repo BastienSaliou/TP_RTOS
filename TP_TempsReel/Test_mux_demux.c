@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include <time.h>
 #include "stdlib.h"
 #include "package.h"
 #include "mux_demux.h"
@@ -9,6 +10,7 @@
 
 #define NUM_CALLS 5
 #define TRAME_SIZE 14
+
 
 int test_shuffle() {
     int order[4] = {0, 1, 2, 3};
@@ -59,11 +61,26 @@ int test_demultiplex() {
     uint8_t trame[TRAME_SIZE];
 
     multiplex(trame, x_original, y_original, z_original, status_original);
-
+    /*printf("Trame multiplex : ");
+    for (int i = 0; i < TRAME_SIZE; i++) {
+        printf("%02X ", trame[i]);
+    }
+    printf("\n");*/
     ChannelData x_demux = {0}, y_demux = {0}, z_demux = {0};
     Status status_demux = {0};
 
     demultiplex(trame, &x_demux, &y_demux, &z_demux, &status_demux);
+
+    /*printf("X : %02X %02X %02X %02X\n", x_demux.header, x_demux.data[0], x_demux.data[1], x_demux.data[2]);
+    printf("Y : %02X %02X %02X %02X\n", y_demux.header, y_demux.data[0], y_demux.data[1], y_demux.data[2]);
+    printf("Z : %02X %02X %02X %02X\n", z_demux.header, z_demux.data[0], z_demux.data[1], z_demux.data[2]);
+    printf("Status : %02X %02X\n", status_demux.header, status_demux.status);*/
+
+    swap_channel_data(&x_demux, &y_demux, &z_demux);
+
+    /*printf("X : %02X %02X %02X %02X\n", x_demux.header, x_demux.data[0], x_demux.data[1], x_demux.data[2]);
+    printf("Y : %02X %02X %02X %02X\n", y_demux.header, y_demux.data[0], y_demux.data[1], y_demux.data[2]);
+    printf("Z : %02X %02X %02X %02X\n", z_demux.header, z_demux.data[0], z_demux.data[1], z_demux.data[2]);*/
 
     int foo5 = 1;
 
@@ -101,9 +118,12 @@ int test_demultiplex() {
     }
     return foo5;
 }
+
+
+
 #ifdef TEST_MUX_DEMUX_MAIN
 int main(void) {
-
+    srand(time(NULL));
     tst_t tests[] = {
             DECL_TEST(test_multiplex),
             DECL_TEST(test_demultiplex),
@@ -115,4 +135,3 @@ int main(void) {
     return EXIT_SUCCESS;
 }
 #endif
-
