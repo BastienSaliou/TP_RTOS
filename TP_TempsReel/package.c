@@ -13,7 +13,8 @@ typedef struct {
 
 
 void generate_channel_data_random(uint8_t *data) {
-    for (int i = 0; i < 3; i++) {
+		int i=0;
+    for (i = 0; i < 3; i++) {
         data[i] = generate_random_data();
     }
 }

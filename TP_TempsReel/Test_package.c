@@ -3,29 +3,13 @@
 #include "Test_lib.h"
 #include <stdint.h>
 #include <stdlib.h>
-#include <stdio.h>
 
-void print_channel_data(const ChannelData *channel) {
-    printf("%02X %02X %02X %02X\n",
-           channel->header, channel->data[0], channel->data[1], channel->data[2]);
-}
-
-void print_status(const Status *status) {
-    printf("%02X %02X\n", status->header, status->status);
-}
 
 int test_generate_package() {
     ChannelData x = generate_channel_data(0x01); // Voie X
     ChannelData y = generate_channel_data(0x02); // Voie Y
     ChannelData z = generate_channel_data(0x03); // Voie Z
-
     Status status = generate_status();
-
-    /*printf("Generated Package:\n");
-    print_channel_data(&x);
-    print_channel_data(&y);
-    print_channel_data(&z);
-    print_status(&status);*/
 
     int headers_correct = 1;
     if (x.header != 0x01) {

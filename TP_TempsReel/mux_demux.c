@@ -4,9 +4,9 @@
 
 
 void shuffle(int *array, int n) {
-    for (int i = n - 1; i > 0; i--) {
+		int i = 0;
+    for (i = n - 1; i > 0; i--) {
         int j = rand() % (i + 1);
-
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
@@ -17,12 +17,11 @@ void shuffle(int *array, int n) {
 
 void multiplex(uint8_t *trame, ChannelData x, ChannelData y, ChannelData z, Status status) {
     int i = 0;
-
+		int k = 0;
     int order[4] = {0, 1, 2, 3};
-
     shuffle(order, 4);
 
-    for (int k = 0; k < 4; k++) {
+    for (k = 0; k < 4; k++) {
         switch (order[k]) {
             case 0:
                 trame[i++] = x.header;
@@ -50,7 +49,6 @@ void multiplex(uint8_t *trame, ChannelData x, ChannelData y, ChannelData z, Stat
 
 void demultiplex(uint8_t *trame, ChannelData *x, ChannelData *y, ChannelData *z, Status *status) {
     int i = 0;
-
 
     x->header = trame[i++];
     memcpy(x->data, &trame[i], sizeof(x->data));

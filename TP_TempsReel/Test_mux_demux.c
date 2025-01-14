@@ -23,7 +23,6 @@ int test_shuffle() {
         if (memcmp(original, order, sizeof(order)) == 0) {
             foo6 = 0;
         }
-
         return foo6;
     }
 }
@@ -40,13 +39,7 @@ int test_multiplex() {
 
     // teste 5 trames
     for (int i = 0; i < NUM_CALLS; i++) {
-
         multiplex(trames[i], x, y, z, status);
-        printf("Trame %d : ", i + 1);
-        for (int j = 0; j < TRAME_SIZE; j++) {
-            printf("%02X ", trames[i][j]);
-        }
-        printf("\n");
     }
 
     for (int i = 0; i < NUM_CALLS - 1; i++) {
@@ -67,10 +60,6 @@ int test_demultiplex() {
 
     multiplex(trame, x_original, y_original, z_original, status_original);
 
-    for (int i = 0; i < TRAME_SIZE; i++) {
-        printf("%02X ", trame[i]);
-    }
-    printf("\n");
     ChannelData x_demux = {0}, y_demux = {0}, z_demux = {0};
     Status status_demux = {0};
 
@@ -78,38 +67,33 @@ int test_demultiplex() {
 
     int foo5 = 1;
 
-    // Vérifier les voies dans n'importe quel ordre
     for (int i = 0; i < TRAME_SIZE;) {
         uint8_t header = trame[i++];
         switch (header) {
-            case 0x01: // Voie X
+            case 0x01:
                 if (memcmp(&trame[i], x_original.data, sizeof(x_original.data)) != 0) {
                     foo5 = 0;
-                    printf("Erreur : Données de la voie X incorrectes.\n");
                 }
                 i += sizeof(x_original.data);
                 break;
 
-            case 0x02: // Voie Y
+            case 0x02:
                 if (memcmp(&trame[i], y_original.data, sizeof(y_original.data)) != 0) {
                     foo5 = 0;
-                    printf("Erreur : Données de la voie Y incorrectes.\n");
                 }
                 i += sizeof(y_original.data);
                 break;
 
-            case 0x03: // Voie Z
+            case 0x03:
                 if (memcmp(&trame[i], z_original.data, sizeof(z_original.data)) != 0) {
                     foo5 = 0;
-                    printf("Erreur : Données de la voie Z incorrectes.\n");
                 }
                 i += sizeof(z_original.data);
                 break;
 
-            case 0x04: // Status
+            case 0x04:
                 if (trame[i++] != status_original.status) {
                     foo5 = 0;
-                    printf("Erreur : Données du statut incorrectes.\n");
                 }
                 break;
 

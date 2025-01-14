@@ -1,6 +1,5 @@
 #include <stdint.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include "Byte.h"
 #include "Test_lib.h"
 
@@ -10,14 +9,12 @@ int test_generate_random_data() {
 
     for (int i = 0; i < 100; i++) {
         int32_t data = generate_random_data();
-        //printf("%d\n", data);
 
         if (data > 0xFFFFFF) {
             foo1 = 0;
             return EXIT_FAILURE;
         }
     }
-
     return foo1;
 }
 
@@ -26,10 +23,6 @@ int test_swap_be() {
     uint32_t input = generate_random_data();
     uint32_t result = swap_be(input);
 
-    //printf("Input:  0x%08X\n", input);
-    //printf("Result: 0x%08X\n", result);
-
-
     uint8_t first_byte_input = (input >> 24) & 0xFF;
     uint8_t fourth_byte_result = result & 0xFF;
 
@@ -37,7 +30,6 @@ int test_swap_be() {
     if (first_byte_input != fourth_byte_result) {
         foo2 = 0;
     }
-
     return foo2;
 }
 
