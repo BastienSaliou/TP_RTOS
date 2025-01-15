@@ -131,11 +131,11 @@ int main() {
 
                 demultiplex(dequeued_element.trame, &x_demux, &y_demux, &z_demux, &status_demux);
 
-                printf("Demultiplexed: X=[%02X %02X %02X %02X], Y=[%02X %02X %02X %02X], Z=[%02X %02X %02X %02X], Status=%02X\n",
+                printf("Demultiplexed: X=[%02X %02X %02X %02X], Y=[%02X %02X %02X %02X], Z=[%02X %02X %02X %02X], Status= %02X %02X\n",
                        x_demux.header, x_demux.data[0], x_demux.data[1], x_demux.data[2],
                        y_demux.header, y_demux.data[0], y_demux.data[1], y_demux.data[2],
                        z_demux.header, z_demux.data[0], z_demux.data[1], z_demux.data[2],
-                       status_demux.status);
+                       status_demux.header, status_demux.status);
             }
         }
     }
