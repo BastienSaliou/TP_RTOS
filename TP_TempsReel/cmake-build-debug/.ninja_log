@@ -69,3 +69,6 @@
 74	151	7586612999981450	test_global.exe	5c702b6847b5f650
 2	65	7586618205900978	CMakeFiles/test_byte.dir/Byte.c.obj	ffc05d7f0a3818ec
 66	140	7586618206616116	test_byte.exe	9f9d68e4518fc67d
+6	68	7586620227315140	CMakeFiles/test_package.dir/package.c.obj	824a52eddd58ea0b
+2	79	7586620227435294	CMakeFiles/test_package.dir/Byte.c.obj	32d3c29f2070870d
+79	158	7586620228175159	test_package.exe	1d7f798d47837274
