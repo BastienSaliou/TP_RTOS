@@ -1,6 +1,7 @@
 C:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/cmake-build-debug/CMakeFiles/test_byte.dir
 C:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/cmake-build-debug/CMakeFiles/test_mux_demux.dir
 C:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/cmake-build-debug/CMakeFiles/test_package.dir
+C:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/cmake-build-debug/CMakeFiles/queue_management.dir
 C:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/cmake-build-debug/CMakeFiles/test_global.dir
 C:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/cmake-build-debug/CMakeFiles/rebuild_cache.dir

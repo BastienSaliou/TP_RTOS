@@ -206,6 +206,63 @@ build test_package.exe: C_EXECUTABLE_LINKER__test_package_Debug CMakeFiles/test_
   TARGET_PDB = test_package.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target queue_management
+
+
+#############################################
+# Order-only phony target for queue_management
+
+build cmake_object_order_depends_target_queue_management: phony || CMakeFiles/queue_management.dir
+
+build CMakeFiles/queue_management.dir/queue_management.c.obj: C_COMPILER__queue_management_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/queue_management.c || cmake_object_order_depends_target_queue_management
+  DEP_FILE = CMakeFiles\queue_management.dir\queue_management.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\queue_management.dir
+  OBJECT_FILE_DIR = CMakeFiles\queue_management.dir
+
+build CMakeFiles/queue_management.dir/Byte.c.obj: C_COMPILER__queue_management_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Byte.c || cmake_object_order_depends_target_queue_management
+  DEP_FILE = CMakeFiles\queue_management.dir\Byte.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\queue_management.dir
+  OBJECT_FILE_DIR = CMakeFiles\queue_management.dir
+
+build CMakeFiles/queue_management.dir/mux_demux.c.obj: C_COMPILER__queue_management_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/mux_demux.c || cmake_object_order_depends_target_queue_management
+  DEP_FILE = CMakeFiles\queue_management.dir\mux_demux.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\queue_management.dir
+  OBJECT_FILE_DIR = CMakeFiles\queue_management.dir
+
+build CMakeFiles/queue_management.dir/package.c.obj: C_COMPILER__queue_management_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/package.c || cmake_object_order_depends_target_queue_management
+  DEP_FILE = CMakeFiles\queue_management.dir\package.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\queue_management.dir
+  OBJECT_FILE_DIR = CMakeFiles\queue_management.dir
+
+build CMakeFiles/queue_management.dir/Test_lib.c.obj: C_COMPILER__queue_management_unscanned_Debug C$:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/Test_lib.c || cmake_object_order_depends_target_queue_management
+  DEP_FILE = CMakeFiles\queue_management.dir\Test_lib.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\queue_management.dir
+  OBJECT_FILE_DIR = CMakeFiles\queue_management.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target queue_management
+
+
+#############################################
+# Link the executable queue_management.exe
+
+build queue_management.exe: C_EXECUTABLE_LINKER__queue_management_Debug CMakeFiles/queue_management.dir/queue_management.c.obj CMakeFiles/queue_management.dir/Byte.c.obj CMakeFiles/queue_management.dir/mux_demux.c.obj CMakeFiles/queue_management.dir/package.c.obj CMakeFiles/queue_management.dir/Test_lib.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\queue_management.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = queue_management.exe
+  TARGET_IMPLIB = libqueue_management.dll.a
+  TARGET_PDB = queue_management.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target test_global
 
 
@@ -306,6 +363,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build queue_management: phony queue_management.exe
+
 build test_byte: phony test_byte.exe
 
 build test_global: phony test_global.exe
@@ -322,7 +381,7 @@ build test_package: phony test_package.exe
 #############################################
 # Folder: C:/Users/basti/OneDrive/Bureau/5eme_annee/FreeRTOS/TP/TP_TempsReel/cmake-build-debug
 
-build all: phony test_byte.exe test_mux_demux.exe test_package.exe test_global.exe
+build all: phony test_byte.exe test_mux_demux.exe test_package.exe queue_management.exe test_global.exe
 
 # =============================================================================
 # Built-in targets

@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 int test_generate_package();
+int test_swap_channel_data();
 
 
 #endif

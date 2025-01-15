@@ -14,6 +14,7 @@ int main(void) {
             DECL_TEST(test_demultiplex),
             DECL_TEST(test_generate_package),
             DECL_TEST(test_shuffle),
+            DECL_TEST(test_swap_channel_data),
             LAST_TEST
     };
 

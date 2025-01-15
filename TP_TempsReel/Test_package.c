@@ -60,7 +60,7 @@ int test_swap_channel_data() {
 
     swap_channel_data(&x, &y, &z);
 
-    /*printf("Après inversion :\n");
+    /*printf("Apres inversion :\n");
     printf("X : %02X %02X %02X %02X\n", x.header, x.data[0], x.data[1], x.data[2]);
     printf("Y : %02X %02X %02X %02X\n", y.header, y.data[0], y.data[1], y.data[2]);
     printf("Z : %02X %02X %02X %02X\n", z.header, z.data[0], z.data[1], z.data[2]);*/

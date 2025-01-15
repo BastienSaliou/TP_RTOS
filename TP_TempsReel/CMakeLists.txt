@@ -27,6 +27,15 @@ add_executable(test_package
 )
 target_compile_definitions(test_package PRIVATE TEST_PACKAGE_MAIN)
 
+add_executable(queue_management
+        queue_management.c
+        Byte.c
+        mux_demux.c
+        package.c
+        Test_lib.c
+)
+
+
 add_executable(test_global
         Test_global.c
         Byte.c

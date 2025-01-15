@@ -34,7 +34,7 @@ int test_swap_be() {
 
     swap_be_8(data);
 
-    //printf("Après swap : %02X %02X %02X\n", data[0], data[1], data[2]);
+    //printf("Apres swap : %02X %02X %02X\n", data[0], data[1], data[2]);
 
     if (data[0] == original_data_0) {
         foo2 = 0;
