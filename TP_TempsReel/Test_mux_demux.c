@@ -11,8 +11,9 @@
 #define NUM_CALLS 5
 #define TRAME_SIZE 14
 
-
-
+#define HEADER_X 0x01
+#define HEADER_Y 0x02
+#define HEADER_Z 0x03
 
 // Vérifie que l'ordre d'un tableau est modifié après mélange
 int test_shuffle() {
@@ -60,9 +61,9 @@ int test_multiplex() {
 
 // Vérifie que les données extraites correspondent à celles d'origine
 int test_demultiplex() {
-    ChannelData x_original = generate_channel_data(HEADER_X); // Voie X
-    ChannelData y_original = generate_channel_data(HEADER_Y); // Voie Y
-    ChannelData z_original = generate_channel_data(HEADER_Z); // Voie Z
+    ChannelData x_original = generate_channel_data(HEADER_X);
+    ChannelData y_original = generate_channel_data(HEADER_Y);
+    ChannelData z_original = generate_channel_data(HEADER_Z);
     Status status_original = generate_status();
 
     uint8_t trame[TRAME_SIZE];

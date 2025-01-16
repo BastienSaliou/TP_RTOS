@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "queue_management.exe"
+			"path" : "test_global.exe"
 		},
 		{
-			"path" : "queue_management.pdb"
+			"path" : "test_global.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 30,
+				"line" : 40,
 				"parent" : 0
 			}
 		]
@@ -56,11 +56,14 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5,
+				6,
+				7
 			]
 		}
 	],
-	"id" : "queue_management::@6890427a1f51a3e7e1df",
+	"id" : "test_global::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -80,8 +83,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "queue_management",
-	"nameOnDisk" : "queue_management.exe",
+	"name" : "test_global",
+	"nameOnDisk" : "test_global.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -97,7 +100,10 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5,
+				6,
+				7
 			]
 		}
 	],
@@ -106,7 +112,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "queue_management.c",
+			"path" : "Test_global.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -125,6 +131,24 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "package.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Test_byte.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Test_mux_demux.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Test_package.c",
 			"sourceGroupIndex" : 0
 		},
 		{

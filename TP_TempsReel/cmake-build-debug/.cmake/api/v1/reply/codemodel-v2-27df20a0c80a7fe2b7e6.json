@@ -47,7 +47,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "queue_management::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-queue_management-Debug-5b053caeb464163e5ce8.json",
+					"jsonFile" : "target-queue_management-Debug-6aeca834c304c5d55000.json",
 					"name" : "queue_management",
 					"projectIndex" : 0
 				},
@@ -61,7 +61,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "test_global::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_global-Debug-754fa25b69ec97734266.json",
+					"jsonFile" : "target-test_global-Debug-7fd505a0201be7e6962b.json",
 					"name" : "test_global",
 					"projectIndex" : 0
 				},
