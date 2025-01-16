@@ -12,6 +12,8 @@
 #define TRAME_SIZE 14
 
 
+
+
 // Vérifie que l'ordre d'un tableau est modifié après mélange
 int test_shuffle() {
     int order[4] = {0, 1, 2, 3};
@@ -34,9 +36,9 @@ int test_shuffle() {
 
 // Vérifie que chaque trame générée est unique
 int test_multiplex() {
-    ChannelData x = generate_channel_data(0x01);
-    ChannelData y = generate_channel_data(0x02);
-    ChannelData z = generate_channel_data(0x03);
+    ChannelData x = generate_channel_data(HEADER_X);
+    ChannelData y = generate_channel_data(HEADER_Y);
+    ChannelData z = generate_channel_data(HEADER_Z);
     Status status = generate_status();
 
     uint8_t trames[NUM_CALLS][TRAME_SIZE];
@@ -58,9 +60,9 @@ int test_multiplex() {
 
 // Vérifie que les données extraites correspondent à celles d'origine
 int test_demultiplex() {
-    ChannelData x_original = generate_channel_data(0x01); // Voie X
-    ChannelData y_original = generate_channel_data(0x02); // Voie Y
-    ChannelData z_original = generate_channel_data(0x03); // Voie Z
+    ChannelData x_original = generate_channel_data(HEADER_X); // Voie X
+    ChannelData y_original = generate_channel_data(HEADER_Y); // Voie Y
+    ChannelData z_original = generate_channel_data(HEADER_Z); // Voie Z
     Status status_original = generate_status();
 
     uint8_t trame[TRAME_SIZE];

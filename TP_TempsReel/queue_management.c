@@ -8,7 +8,7 @@
 #include "mux_demux.h"
 
 #define QUEUE_SIZE 10
-#define SAMPLE_RATE 1 // 1 Hz
+#define SAMPLE_RATE 2 // 1 Hz
 #define TRAME_SIZE 14
 
 typedef struct {
@@ -23,19 +23,27 @@ typedef struct {
     int count;
 } CircularQueue;
 
-// Function prototypes
-void initQueue(CircularQueue *queue);
-int enqueue(CircularQueue *queue, QueueElement element);
-int dequeue(CircularQueue *queue, QueueElement *element);
-int isQueueFull(CircularQueue *queue);
-int isQueueEmpty(CircularQueue *queue);
-void delay(int seconds);
-
 // Initialize the queue
 void initQueue(CircularQueue *queue) {
     queue->front = 0;
     queue->rear = -1;
     queue->count = 0;
+}
+
+// Check if the queue is full
+int isQueueFull(CircularQueue *queue) {
+    return queue->count == QUEUE_SIZE;
+}
+
+// Check if the queue is empty
+int isQueueEmpty(CircularQueue *queue) {
+    return queue->count == 0;
+}
+
+// Simulate a delay (in seconds)
+void delay(int seconds) {
+    clock_t start_time = clock();
+    while (clock() < start_time + seconds * CLOCKS_PER_SEC);
 }
 
 // Add an element to the queue
@@ -62,20 +70,10 @@ int dequeue(CircularQueue *queue, QueueElement *element) {
     return 0; // Success
 }
 
-// Check if the queue is full
-int isQueueFull(CircularQueue *queue) {
-    return queue->count == QUEUE_SIZE;
-}
-
-// Check if the queue is empty
-int isQueueEmpty(CircularQueue *queue) {
-    return queue->count == 0;
-}
-
-// Simulate a delay (in seconds)
-void delay(int seconds) {
-    clock_t start_time = clock();
-    while (clock() < start_time + seconds * CLOCKS_PER_SEC);
+void printCurrentTime() {
+    time_t now = time(NULL);
+    struct tm *t = localtime(&now);
+    printf("Current Time: %02d:%02d:%02d\n", t->tm_hour, t->tm_min, t->tm_sec);
 }
 
 int main() {
@@ -120,6 +118,9 @@ int main() {
         while (!isQueueEmpty(&queue)) {
             QueueElement dequeued_element;
             if (dequeue(&queue, &dequeued_element) == 0) {
+                // Print current time when the element is dequeued
+                printf("Dequeued at ");
+                printCurrentTime();
                 printf("Dequeued: Timestamp=%d, Trame=", dequeued_element.timestamp);
                 for (int i = 0; i < TRAME_SIZE; i++) {
                     printf("%02X ", dequeued_element.trame[i]);
